@@ -92,6 +92,14 @@ variable "os_disk_size_gb" {
   default     = 50
 }
 
+// Added support for https://github.com/Azure/terraform-azurerm-aks/issues/114
+variable "os_disk_type" {
+  description = "Ephemeral | Managed"
+  type        = string
+  default     = "Ephemeral"
+}
+
+
 variable "private_cluster_enabled" {
   description = "If true cluster API server will be exposed only on internal IP address and available only in cluster vnet."
   type        = bool
